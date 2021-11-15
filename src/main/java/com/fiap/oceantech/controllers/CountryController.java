@@ -49,6 +49,12 @@ public class CountryController {
         return ResponseEntity.status(HttpStatus.OK).body(page);
     }
 
+    @GetMapping("/notPaged")
+    public ResponseEntity<List<CountryDTO>> findAll() {
+        List<CountryDTO> countries = countryService.findAll();
+        return ResponseEntity.status(HttpStatus.OK).body(countries);
+    }
+
     @GetMapping("/oceans")
     public ResponseEntity<List<CountryProjection>> getCountryAmountByOcean() {
         List<CountryProjection> countries = countryService.getCountryAmountByOcean();

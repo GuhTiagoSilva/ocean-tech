@@ -49,6 +49,12 @@ public class OceanController {
         return ResponseEntity.status(HttpStatus.OK).body(page);
     }
 
+    @GetMapping("notPaged")
+    public ResponseEntity<List<OceanDTO>> findAll() {
+        List<OceanDTO> list = oceanService.findAll();
+        return ResponseEntity.status(HttpStatus.OK).body(list);
+    }
+
     @GetMapping("/temperature")
     public ResponseEntity<List<OceanProjection>> getMaxTemperatureByOcean() {
         List<OceanProjection> oceans = oceanService.getMaxTemperatureByOcean();
