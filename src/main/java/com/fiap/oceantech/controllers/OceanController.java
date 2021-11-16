@@ -1,6 +1,7 @@
 package com.fiap.oceantech.controllers;
 
 import com.fiap.oceantech.dto.OceanDTO;
+import com.fiap.oceantech.entities.custom.OceanPhProjection;
 import com.fiap.oceantech.entities.custom.OceanProjection;
 import com.fiap.oceantech.services.OceanService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,5 +60,11 @@ public class OceanController {
     public ResponseEntity<List<OceanProjection>> getMaxTemperatureByOcean() {
         List<OceanProjection> oceans = oceanService.getMaxTemperatureByOcean();
         return ResponseEntity.status(HttpStatus.OK).body(oceans);
+    }
+
+    @GetMapping("current")
+    public ResponseEntity<List<OceanPhProjection>> getCurrentPh() {
+        List<OceanPhProjection> oceanPhProjections = oceanService.getCurrentPh();
+        return ResponseEntity.status(HttpStatus.OK).body(oceanPhProjections);
     }
 }

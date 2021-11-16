@@ -1,9 +1,15 @@
+create table tb_country (id  bigserial not null, name varchar(255), population varchar(255), primary key (id));
+create table tb_ocean (id  bigserial not null, image_path varchar(255), name varchar(255), primary key (id));
+create table tb_ocean_country (ocean_id int8 not null, country_id int8 not null, primary key (ocean_id, country_id));
+create table tb_ocean_data (id  bigserial not null, ph float8, start_date timestamp, temperature float8, week_day varchar(255), ocean_id int8, primary key (id));
+alter table tb_ocean_country add constraint FKdnamjq48r6hqa2pk6hp97e3yy foreign key (country_id) references tb_country;
+alter table tb_ocean_country add constraint FK2a0oeq7uxlpj7qhvqecvavkur foreign key (ocean_id) references tb_ocean;
+alter table tb_ocean_data add constraint FK8v53si8wt4tpqa1bhiuobiv8a foreign key (ocean_id) references tb_ocean;
 INSERT INTO tb_ocean (name, image_path) VALUES ('Oceano Pacífico', 'assets/oceanos/oceano_pacifico.jpg');
 INSERT INTO tb_ocean (name, image_path) VALUES ('Oceano Atlântico', 'assets/oceanos/oceano_atlantico.png');
 INSERT INTO tb_ocean (name, image_path) VALUES ('Oceano Índico', 'assets/oceanos/oceano_indico.jpg');
 INSERT INTO tb_ocean (name, image_path) VALUES ('Oceano Glacial Ártico', 'assets/oceanos/oceano_glacial_artico.jpg');
 INSERT INTO tb_ocean (name, image_path) VALUES ('Oceano Glacial Antártico', 'assets/oceanos/oceano_glacial_antartico.jpg');
-
 INSERT INTO tb_country (name, population) VALUES ('Abecásia','244.832');
 INSERT INTO tb_country (name, population) VALUES ('Açores','245.746');
 INSERT INTO tb_country (name, population) VALUES ('Acrotiri e Deceleia','14.500');
@@ -276,7 +282,6 @@ INSERT INTO tb_country (name, population) VALUES ('Wallis e Futuna','11.700');
 INSERT INTO tb_country (name, population) VALUES ('Zâmbia','17.885.422');
 INSERT INTO tb_country (name, population) VALUES ('Zanzibar','1.303.569');
 INSERT INTO tb_country (name, population) VALUES ('Zimbabué','15.159.624');
-
 INSERT INTO tb_ocean_country (ocean_id, country_id) VALUES (5, 105);
 INSERT INTO tb_ocean_country (ocean_id, country_id) VALUES (4, 147);
 INSERT INTO tb_ocean_country (ocean_id, country_id) VALUES (3, 34);
@@ -675,8 +680,6 @@ INSERT INTO tb_ocean_country (ocean_id, country_id) VALUES (5, 195);
 INSERT INTO tb_ocean_country (ocean_id, country_id) VALUES (5, 172);
 INSERT INTO tb_ocean_country (ocean_id, country_id) VALUES (2, 220);
 INSERT INTO tb_ocean_country (ocean_id, country_id) VALUES (2, 45);
-
-
 INSERT INTO tb_ocean_data (ph, temperature, start_date, week_day, ocean_id) VALUES (3.57, 1.03, '2021-04-01T05:33:00Z', 'SATURDAY', 1);
 INSERT INTO tb_ocean_data (ph, temperature, start_date, week_day, ocean_id) VALUES (8.38, 7.5, '2021-04-02T05:33:00Z', 'MONDAY', 5);
 INSERT INTO tb_ocean_data (ph, temperature, start_date, week_day, ocean_id) VALUES (7.05, 6.06, '2021-04-03T05:33:00Z', 'SUNDAY', 1);

@@ -2,6 +2,7 @@ package com.fiap.oceantech.services;
 
 import com.fiap.oceantech.dto.OceanDTO;
 import com.fiap.oceantech.entities.Ocean;
+import com.fiap.oceantech.entities.custom.OceanPhProjection;
 import com.fiap.oceantech.entities.custom.OceanProjection;
 import com.fiap.oceantech.exceptions.DatabaseException;
 import com.fiap.oceantech.exceptions.ResourceNotFoundException;
@@ -66,6 +67,11 @@ public class OceanService {
     @Transactional(readOnly = true)
     public List<OceanProjection> getMaxTemperatureByOcean() {
         return oceanRepository.getMaxTemperatureByOcean();
+    }
+
+    @Transactional(readOnly = true)
+    public List<OceanPhProjection> getCurrentPh() {
+        return oceanRepository.getCurrentPh();
     }
 
     public void delete(Long id) {
