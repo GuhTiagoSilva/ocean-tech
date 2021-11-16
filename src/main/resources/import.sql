@@ -1,8 +1,8 @@
-INSERT INTO tb_ocean (name) VALUES ('Oceano Pacífico');
-INSERT INTO tb_ocean (name) VALUES ('Oceano Atlântico');
-INSERT INTO tb_ocean (name) VALUES ('Oceano Índico');
-INSERT INTO tb_ocean (name) VALUES ('Oceano Glacial Ártico');
-INSERT INTO tb_ocean (name) VALUES ('Oceano Glacial Antártico');
+INSERT INTO tb_ocean (name, image_path) VALUES ('Oceano Pacífico', 'assets/oceanos/oceano_pacifico.jpg');
+INSERT INTO tb_ocean (name, image_path) VALUES ('Oceano Atlântico', 'assets/oceanos/oceano_atlantico.png');
+INSERT INTO tb_ocean (name, image_path) VALUES ('Oceano Índico', 'assets/oceanos/oceano_indico.jpg');
+INSERT INTO tb_ocean (name, image_path) VALUES ('Oceano Glacial Ártico', 'assets/oceanos/oceano_glacial_artico.jpg');
+INSERT INTO tb_ocean (name, image_path) VALUES ('Oceano Glacial Antártico', 'assets/oceanos/oceano_glacial_antartico.jpg');
 
 INSERT INTO tb_country (name, population) VALUES ('Abecásia','244.832');
 INSERT INTO tb_country (name, population) VALUES ('Açores','245.746');

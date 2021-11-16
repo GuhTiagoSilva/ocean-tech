@@ -80,6 +80,7 @@ public class OceanService {
 
     private void copyDtoToEntity (OceanDTO oceanDTO, Ocean entity) {
         entity.setName(oceanDTO.getName());
+        entity.setImagePath(oceanDTO.getImagePath());
     }
 
 }

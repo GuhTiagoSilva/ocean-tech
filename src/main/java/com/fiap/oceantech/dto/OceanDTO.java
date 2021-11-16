@@ -9,19 +9,22 @@ public class OceanDTO implements Serializable {
 
     private Long id;
     private String name;
+    private String imagePath;
 
     public OceanDTO() {
 
     }
 
-    public OceanDTO(Long id, String name) {
+    public OceanDTO(Long id, String name, String imagePath) {
         this.id = id;
         this.name = name;
+        this.imagePath = imagePath;
     }
 
     public OceanDTO(Ocean entity) {
         id = entity.getId();
         name = entity.getName();
+        imagePath = entity.getImagePath();
     }
 
     public Long getId() {
@@ -38,5 +41,13 @@ public class OceanDTO implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 }

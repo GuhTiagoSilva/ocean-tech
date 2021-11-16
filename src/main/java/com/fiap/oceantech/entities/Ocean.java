@@ -16,6 +16,7 @@ public class Ocean implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String imagePath;
 
     @ManyToMany
     @JoinTable(name = "tb_ocean_country", joinColumns = @JoinColumn(name = "ocean_id"), inverseJoinColumns = @JoinColumn(name = "country_id"))
@@ -28,9 +29,10 @@ public class Ocean implements Serializable {
 
     }
 
-    public Ocean(Long id, String name) {
+    public Ocean(Long id, String name, String imagePath) {
         this.id = id;
         this.name = name;
+        this.imagePath = imagePath;
     }
 
     public Long getId() {
@@ -47,6 +49,14 @@ public class Ocean implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 
     public Set<Country> getCountries() {
